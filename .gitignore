@@ -1,4 +1,5 @@
-/notebooks/height-weight.csv
-/notebooks/linear_pro.ipynb
-/notebooks/multiple_reg.ipynb
-/models/regressor.pkl
+# Ignore CSV and model files
+notebooks/height-weight.csv
+notebooks/linear_pro.ipynb
+notebooks/multiple_reg.ipynb
+models/regressor.pkl
