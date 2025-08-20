@@ -1,1 +1,36 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forest Fire Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    function showLoading() {
+      document.getElementById("loading").style.display = "flex";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Forest Fire Prediction</h1>
+    <form action="/predictdata" method="POST" class="form-grid" onsubmit="showLoading()">
+      <input type="number" step="any" name="Temperature" placeholder="Temperature (°C)" required>
+      <input type="number" step="any" name="RH" placeholder="Relative Humidity (%)" required>
+      <input type="number" step="any" name="Ws" placeholder="Wind Speed" required>
+      <input type="number" step="any" name="Rain" placeholder="Rain (mm)" required>
+      <input type="number" step="any" name="FFMC" placeholder="FFMC Index" required>
+      <input type="number" step="any" name="DMC" placeholder="DMC Index" required>
+      <input type="number" step="any" name="ISI" placeholder="ISI Index" required>
+      <input type="number" step="any" name="Classes" placeholder="Classes (0/1)" required>
+      <input type="number" step="any" name="Region" placeholder="Region" required>
+      
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+
+  <div id="loading" class="loading-overlay">
+    <div class="spinner"></div>
+    <p>Processing your request...</p>
+  </div>
+</body>
+</html>
