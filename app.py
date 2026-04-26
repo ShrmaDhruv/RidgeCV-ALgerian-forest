@@ -18,14 +18,11 @@ FFMC = st.sidebar.slider("FFMC Index", min_value=0.0, max_value=101.0, step=0.1)
 DMC = st.sidebar.slider("DMC Index", min_value=0.0, max_value=300.0, step=0.1)
 ISI = st.sidebar.slider("ISI Index", min_value=0.0, max_value=50.0, step=0.1)
 
-# Classes and Region as 0/1 inputs
 Classes = st.sidebar.selectbox("Classes", options=[0, 1])
 Region = st.sidebar.selectbox("Region", options=[0, 1])
 
-# Prepare input
 input_data = [[Temperature, RH, Ws, Rain, FFMC, DMC, ISI, Classes, Region]]
 
-# Scale input
 scaled_data = standard_scaler.transform(input_data)
 
 # Prediction button

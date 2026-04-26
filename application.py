@@ -29,7 +29,6 @@ def predict_datapoint():
         Region = float(request.form.get('Region'))
         input_data = [[Temperature, RH, Ws, Rain, FFMC, DMC, ISI, Classes, Region]]
 
-        # Apply scaling
         new_scaled_data = standard_scaler.transform(input_data)
         # new_scaled_data=standard_scaler.transform([['Temperature','RH','Rain','FFMC','DMC','ISI','Classes','Region']])
         result=ridgecv_model.predict(new_scaled_data)

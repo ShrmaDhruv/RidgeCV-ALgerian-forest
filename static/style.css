@@ -81,9 +81,9 @@ button:hover {
 .back-btn:hover {
   background: #1e7e34;
 }
-/* Loading overlay */
+
 .loading-overlay {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
