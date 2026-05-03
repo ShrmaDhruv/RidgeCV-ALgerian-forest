@@ -18,15 +18,16 @@
       {% if results is not none %}
 
         <div class="result-display 
-            {% if results == 1 %}high-risk{% else %}low-risk{% endif %}">
+            {% if results >50 %}high-risk{% else %}low-risk{% endif %}">
 
-          {% if results == 1 %}
+          {% if results > 50 %}
             <h2>🔥 High Fire Risk</h2>
             <p>Conditions are highly favorable for forest fire.</p>
           {% else %}
             <h2>🌿 Low Fire Risk</h2>
             <p>Conditions are relatively safe.</p>
           {% endif %}
+          <p><strong>Predicted Value:</strong> {{ results | round(2) }}</p>
 
         </div>
 
